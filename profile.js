@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
 
     // create header containing name
     const name = document.createElement('h1');
@@ -19,13 +19,25 @@ window.addEventListener("DOMContentLoaded", () => {
     const fourItem = document.createElement('li');
 
         // list item text content
-    const oneContent = document.createTextNode("Crochet");
-    const twoContent = document.createTextNode("Drawing");
-    const threeContent = document.createTextNode("Sewing");
-    const fourContent = document.createTextNode("Macrame");
+    const oneContent = document.createTextNode('Crochet');
+    const twoContent = document.createTextNode('Drawing');
+    const threeContent = document.createTextNode('Sewing');
+    const fourContent = document.createTextNode('Macrame');
 
         // append list content to list items
+    oneItem.appendChild(oneContent);
+    twoItem.appendChild(twoContent);
+    threeItem.appendChild(threeContent);
+    fourItem.appendChild(fourContent);
 
+        // append list items to ul element
+    firstList.appendChild(oneItem);
+    firstList.appendChild(twoItem);
+    firstList.appendChild(threeItem);
+    firstList.appendChild(fourItem);
+
+        // append ul to document
+    document.body.appendChild(firstList);
 
 
     // refactor to make list programmatic
