@@ -41,6 +41,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // refactor to make list programmatic
+    const moreHobbiesArray = [
+        'Paper Crafts',
+        'Painting',
+        'Graphic Printing',
+        'DIY Revamps'
+    ];
+
+    function addListItems(array) {
+        const secondList = document.createElement('ul');
+
+        array.forEach((hobby) => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = hobby;
+            console.log(secondList.appendChild(listItem));
+        });
+
+        document.body.appendChild(secondList);
+    }
+
+    console.log(addListItems(moreHobbiesArray));
+
 
 
     // add css classes and styles
