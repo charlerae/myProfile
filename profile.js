@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
 
     // create header containing name
     const name = document.createElement('h1');
@@ -19,19 +19,63 @@ window.addEventListener("DOMContentLoaded", () => {
     const fourItem = document.createElement('li');
 
         // list item text content
-    const oneContent = document.createTextNode("Crochet");
-    const twoContent = document.createTextNode("Drawing");
-    const threeContent = document.createTextNode("Sewing");
-    const fourContent = document.createTextNode("Macrame");
+    const oneContent = document.createTextNode('Crochet');
+    const twoContent = document.createTextNode('Drawing');
+    const threeContent = document.createTextNode('Sewing');
+    const fourContent = document.createTextNode('Macrame');
 
         // append list content to list items
+    oneItem.appendChild(oneContent);
+    twoItem.appendChild(twoContent);
+    threeItem.appendChild(threeContent);
+    fourItem.appendChild(fourContent);
 
+        // append list items to ul element
+    firstList.appendChild(oneItem);
+    firstList.appendChild(twoItem);
+    firstList.appendChild(threeItem);
+    firstList.appendChild(fourItem);
+
+        // append ul to document
+    document.body.appendChild(firstList);
 
 
     // refactor to make list programmatic
+    const moreHobbiesArray = [
+        'Paper Crafts',
+        'Painting',
+        'Graphic Printing',
+        'DIY Revamps'
+    ];
+
+    let secondList;
+    function addListItems(array) {
+        secondList = document.createElement('ul');
+
+        array.forEach((hobby) => {
+            const listItem = document.createElement('li');
+            listItem.setAttribute('class', 'detail');
+            listItem.innerHTML = hobby;
+            secondList.appendChild(listItem);
+        });
+
+        document.body.appendChild(secondList);
+    }
+
+    addListItems(moreHobbiesArray);
+
 
 
     // add css classes and styles
+    firstList.setAttribute('class', 'my-details');
+    secondList.setAttribute('class', 'my-details');
+    name.setAttribute('class', 'cName');
+
+        // adding class names to first unordered list
+    function addClass() {
+        document.querySelectorAll('li')
+    }
+
 
 
     // add a clock with date object
