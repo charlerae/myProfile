@@ -79,6 +79,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // add a clock with date object
+    const clockDiv = document.createElement('div');
+    clockDiv.setAttribute('id', 'clockDiv');
+
+    function adjustClock(num) {
+        return (num < 10 ? '0' : '') + num;
+    }
+
+        // get the time with Date method
+    function getTime() {
+        const clock = new Date();
+        const hours = clock.getHours();
+        const minutes = clock.getMinutes();
+        const seconds = clock.getSeconds();
+        document.body.prepend(clockDiv);
+        return clockDiv.innerHTML =  'The Time Is Now: ' + hours + ':' + adjustClock(minutes) + ':' + adjustClock(seconds);
+    }
+
+    setInterval(() => {
+        return getTime();
+    });
+    // document.body.appendChild(clockDiv);
+
+
+
 
 
     // add more sections to page like an image
