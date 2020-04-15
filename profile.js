@@ -48,23 +48,34 @@ window.addEventListener('DOMContentLoaded', () => {
         'DIY Revamps'
     ];
 
+    let secondList;
     function addListItems(array) {
-        const secondList = document.createElement('ul');
+        secondList = document.createElement('ul');
 
         array.forEach((hobby) => {
             const listItem = document.createElement('li');
+            listItem.setAttribute('class', 'detail');
             listItem.innerHTML = hobby;
-            console.log(secondList.appendChild(listItem));
+            secondList.appendChild(listItem);
         });
 
         document.body.appendChild(secondList);
     }
 
-    console.log(addListItems(moreHobbiesArray));
+    addListItems(moreHobbiesArray);
 
 
 
     // add css classes and styles
+    firstList.setAttribute('class', 'my-details');
+    secondList.setAttribute('class', 'my-details');
+    name.setAttribute('class', 'cName');
+
+        // adding class names to first unordered list
+    function addClass() {
+        document.querySelectorAll('li')
+    }
+
 
 
     // add a clock with date object
